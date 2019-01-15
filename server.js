@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../application');
+var app = require('./application');
 var debug = require('debug')('myapp:server');
 var http = require('http');
 
@@ -88,3 +88,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+module.exports = server
