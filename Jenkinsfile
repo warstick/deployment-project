@@ -1,21 +1,19 @@
-pipeline {
-  agent any
-
-  stages {
-      stage('Build') {
-          steps {
-              echo 'Building..'
-          }
-      }
-      stage('Test') {
-          steps {
-              echo 'Testing..'
-          }
-      }
-      stage('Deploy') {
+node('node') {
+    checkout scm
+    stage('Checkout'){
+        checkout scm
+    }
+    stage('Build') {
+        sh 'node -v'
+    }
+    stage('Test') {
+        echo 'Testing..'
+    }
+    stage('Deploy') {
           steps {
               echo 'Deploying....'
           }
       }
-  }
+
+
 }
