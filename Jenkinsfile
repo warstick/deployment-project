@@ -1,21 +1,23 @@
-node {
+node('node') {
     checkout scm
-    stage('Checkout'){
-        checkout scm
-    }
-    stage('Build') {
-        steps {
-            sh 'node -v'
-        }
-    }
-    stage('Test') {
-        echo 'Testing..'
-    }
-    stage('Deploy') {
+}
+
+pipeline {
+  agent any
+
+  stages {
+      stage('Build') {
+          sh 'node -v'
+      }
+      stage('Test') {
+          steps {
+              echo 'Testing..'
+          }
+      }
+      stage('Deploy') {
           steps {
               echo 'Deploying....'
           }
       }
-
-
+  }
 }
