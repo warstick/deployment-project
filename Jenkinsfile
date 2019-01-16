@@ -4,7 +4,9 @@ node {
         checkout scm
     }
     stage('Build') {
-        sh 'node -v'
+        steps {
+            sh 'node -v'
+        }
     }
     stage('Test') {
         echo 'Testing..'
