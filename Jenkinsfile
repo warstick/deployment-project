@@ -35,7 +35,7 @@ pipeline {
       }
       stage('Deploy') {
           steps {
-              withAWS(credentials:'AKIAIO43KAIHUSPTEWUA') {
+              withAWS(region: 'us-east-2') {
                   s3Upload(file:'build.tar.zip', bucket:'jenkins-test-pipeline', path:'build/')
               }
               echo 'Deploying....'
