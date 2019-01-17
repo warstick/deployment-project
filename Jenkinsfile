@@ -28,6 +28,11 @@ pipeline {
               sh 'npm run test'
           }
       }
+      stage('artifacts') {
+          steps {
+              sh 'zip **/**'
+          }
+      }
       stage('Deploy') {
           steps {
               echo 'Deploying....'
