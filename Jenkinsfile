@@ -35,8 +35,8 @@ pipeline {
       }
       stage('Deploy') {
           steps {
+              s3Upload(file:'build.tar.zip', bucket:'jenkins-test-pipeline', path:'./build/build.tar.zip')
               echo 'Deploying....'
-              sh '/home/jenkins/.local/bin/aws s3 cp ./build s3://jenkins-test-pipeline --recursive --include "*"'
           }
       }
   }
