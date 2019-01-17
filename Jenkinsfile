@@ -38,7 +38,8 @@ pipeline {
               withAWS(region: 'us-east-2') {
                   s3Upload(file:'build/build.tar.gz', bucket:'jenkins-test-pipeline', path:'/')
               }
-              echo 'Deploying....'
+              echo 'Deploying...'
+              sh 'rm -rf build/build.tar.gz'
           }
       }
   }

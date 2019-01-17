@@ -6,6 +6,6 @@ gulp.task('zipProject', function (done) {
     gulp.src('**/**')
         .pipe(tar('build.tar'))
         .pipe(gzip())
-        .pipe(gulp.dest('build'));
+        .pipe(gulp.dest('build'))
     done();
 });
