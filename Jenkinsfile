@@ -36,7 +36,7 @@ pipeline {
       stage('Deploy') {
           steps {
               echo 'Deploying....'
-              sh '/usr/local/bin/aws s3 cp ./build s3://jenkins-test-pipeline --recursive --include "*"'
+              sh '/home/jenkins/.local/bin/aws s3 cp ./build s3://jenkins-test-pipeline --recursive --include "*"'
           }
       }
   }
