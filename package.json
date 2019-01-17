@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node server",
-    "test": "./node_modules/.bin/mocha ./test/test.js"
+    "test": "./node_modules/.bin/mocha ./test/test.js",
+    "build": "./node_modules/.bin/gulp zipProject"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -17,6 +18,10 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "gulp": "^4.0.0",
+    "gulp-gzip": "^1.4.2",
+    "gulp-tar": "^2.1.0",
+    "gulp-watch": "^5.0.1",
     "mocha": "^5.2.0",
     "request": "^2.88.0"
   }

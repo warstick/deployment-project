@@ -30,7 +30,25 @@ pipeline {
       }
       stage('artifacts') {
           steps {
-              sh 'zip **/**'
+            script {
+                fileOperations([
+                        fileDownloadOperation(
+                                password: '',
+                                targetFileName: 'foo.zip',
+                                targetLocation: "${WORKSPACE}",
+                                url: 'https://foobar.com/foo.zip',
+                                userName: ''),
+                        fileUnZipOperation(
+                                filePath: 'foo.zip',
+                                targetLocation: '.'),
+                        folderCopyOperation(
+                                destinationFolderPath: 'dest',
+                                sourceFolderPath: 'foo/content'),
+                        folderDeleteOperation(
+                                './foo'
+                        )
+                ])
+            }
           }
       }
       stage('Deploy') {
