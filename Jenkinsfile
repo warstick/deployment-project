@@ -30,7 +30,7 @@ pipeline {
       }
       stage('artifacts') {
           steps {
-              sh 'rm -rf build/build.tar.gz && npm run build'
+              // sh 'rm -rf build/build.tar.gz && npm run build'
           }
       }
       stage('Deploy') {
@@ -51,7 +51,7 @@ pipeline {
                   deploymentGroupAppspec: false,
                   deploymentGroupName: 'pipeline-demo',
                   deploymentMethod: 'deploy',
-                  // excludes: '',
+                  excludes: './node_modules',
                   // iamRoleArn: '',
                   includes: '**',
                   proxyPort: 0,
@@ -63,7 +63,7 @@ pipeline {
               ])
 
               echo 'Deploying...'
-              sh 'rm -rf build/build.tar.gz'
+              // sh 'rm -rf build/build.tar.gz'
           }
       }
   }
