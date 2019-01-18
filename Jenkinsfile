@@ -54,12 +54,10 @@ pipeline {
                   // excludes: '',
                   // iamRoleArn: '',
                   includes: '**',
-                  proxyHost: '',
                   proxyPort: 0,
                   region: 'us-east-2',
                   s3bucket: 'jenkins-test-pipeline',
-                  s3prefix: '',
-                  subdirectory: '',
+                  s3prefix: 'from-jenkins',
                   versionFileName: 'build',
                   waitForCompletion: false
               ])
