@@ -30,7 +30,7 @@ pipeline {
       }
       stage('artifacts') {
           steps {
-              // sh 'rm -rf build/build.tar.gz && npm run build'
+              echo 'build step'
           }
       }
       stage('Deploy') {
