@@ -30,11 +30,12 @@ pipeline {
       }
       stage('artifacts') {
           steps {
-              sh 'npm run build'
+              sh 'rm -rf build/build.tar.gz && npm run build'
           }
       }
       stage('Deploy') {
           steps {
+              
               /**
               withAWS(region: 'us-east-2') {
                   s3Upload(file:'build/build.tar.gz', bucket:'jenkins-test-pipeline', path:'/')
