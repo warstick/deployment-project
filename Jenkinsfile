@@ -51,7 +51,7 @@ pipeline {
                   deploymentGroupAppspec: false,
                   deploymentGroupName: 'pipeline-demo',
                   deploymentMethod: 'deploy',
-                  excludes: './node_modules',
+                  excludes: 'node_modules/**',
                   // iamRoleArn: '',
                   includes: '**',
                   proxyPort: 0,
