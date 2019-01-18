@@ -59,7 +59,7 @@ pipeline {
                   s3bucket: 'jenkins-test-pipeline',
                   s3prefix: 'from-jenkins',
                   versionFileName: 'build',
-                  waitForCompletion: false
+                  waitForCompletion: true
               ])
 
               echo 'Deploying...'
