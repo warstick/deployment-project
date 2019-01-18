@@ -18,6 +18,11 @@ pipeline {
             sh 'npm install'
         }    
       }
+      stage('AWS CLI Check') {
+          steps{
+              sh 'aws --version'
+          }
+      }
       stage('Build') {
           steps {
             sh 'node -v'
