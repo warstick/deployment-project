@@ -44,23 +44,23 @@ pipeline {
               
               step([
                   $class: 'AWSCodeDeployPublisher',
-                  applicationName: '',
-                  awsAccessKey: '',
-                  awsSecretKey: '',
-                  credentials: 'awsAccessKey',
+                  applicationName: 'pipeline-demo',
+                  // awsAccessKey: '',
+                  // awsSecretKey: '',
+                  // credentials: 'awsAccessKey',
                   deploymentGroupAppspec: false,
-                  deploymentGroupName: '',
+                  deploymentGroupName: 'pipeline-demo',
                   deploymentMethod: 'deploy',
-                  excludes: '',
-                  iamRoleArn: '',
+                  // excludes: '',
+                  // iamRoleArn: '',
                   includes: '**',
                   proxyHost: '',
                   proxyPort: 0,
-                  region: 'ap-northeast-1',
-                  s3bucket: '',
+                  region: 'us-east-2',
+                  s3bucket: 'jenkins-test-pipeline',
                   s3prefix: '',
                   subdirectory: '',
-                  versionFileName: '',
+                  versionFileName: 'build',
                   waitForCompletion: false
               ])
 
