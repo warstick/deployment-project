@@ -61,8 +61,8 @@ pipeline {
                   includes: '**',
                   proxyPort: 0,
                   region: 'us-east-2',
-                  s3bucket: 'jenkins-test-pipeline',
-                  s3prefix: 'from-jenkins',
+                  s3bucket: 'peerfeed',
+                  s3prefix: 'server-node',
                   versionFileName: 'build',
                   waitForCompletion: true
               ])
